@@ -1,0 +1,52 @@
+
+def print_menu():
+    print("\nTaco Palace Menu")
+    print("1. Taco")
+    print("2. Burrito")
+    print("3. Nachos")
+    print("4. Soft Drink")
+    print("5. Quit")
+
+
+def get_price(choice):
+    if choice == 1:
+        return 3.50
+    elif choice == 2:
+        return 5.00
+    elif choice == 3:
+        return 4.50
+    elif choice == 4:
+        return 1.95
+
+
+print("Welcome to Taco Palace, please view the menu below and enter the number that represents your selection.")
+
+orders = []
+total = 0.00
+
+while True:
+    print_menu()
+    choice = int(input("Enter your selection: "))
+
+    if choice == 1:
+        item = "Taco"
+    elif choice == 2:
+        item = "Burrito"
+    elif choice == 3:
+        item = "Nachos"
+    elif choice == 4:
+        item = "Soft Drink"
+    elif choice == 5:
+        break
+    else:
+        print("Invalid selection. Please try again.")
+        continue
+
+    print("You have selected a", item)
+    orders.append(item)
+    total += get_price(choice)
+
+print("\nYour order:")
+print(", ".join(orders))
+print(f"Your total is ${total:.2f}")
+print("Thank you for visiting Taco Palace!")
